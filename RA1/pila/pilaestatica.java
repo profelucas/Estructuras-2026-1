@@ -53,6 +53,6 @@ class pilaestatica {
     }
 //dado un objeto devolver la posicion
     public void buscar(Object x){
-        //desafio
     }
+
 }
