@@ -17,6 +17,7 @@ public class colaestatica {
     public boolean eslleno(){
         return this.ultimo==tam-1;
     }
+
     public Object getprimero(){
         return cola[this.primero];
     }
@@ -43,28 +44,24 @@ public class colaestatica {
         }
 
     }
+
+    private void sobreponer(){
+        int j=0;
+        for (int i = primero; i < tam; i++) {
+            cola[j]=cola[i];
+            j++;
+        }
+        this.ultimo=this.ultimo-1;
+        this.primero=0;
+    }
     public void quitar(){
         if (esvacia()) {
             System.out.println("Esta vacio");
         } else {
             this.cola[primero]=null;
             this.primero++;
-            this.sobreponer();
+            sobreponer();
         }
-    }
-
-
-    public void sobreponer(){
-        int j  = 0;
-        for (int i = primero; i < this.tam; i++) {
-            cola[j]=cola[i];
-            j++;
-        }
-        cola[tam-1]=null;
-
-        this.ultimo = this.ultimo - this.primero;
-        primero = 0;
-        
     }
 
     public void mostrar(){
@@ -75,5 +72,17 @@ public class colaestatica {
         for (int i = this.primero; i <= this.ultimo; i++) {
             System.out.println(cola[i]);
         }
+    }
+
+
+    
+    //buscar por item
+    //buscar por posicion
+    //retornar la posicion
+    public int buscar(){
+
+
+        return 0;
+
     }
 }

@@ -8,5 +8,7 @@ class main{
         cola.mostrar();
         cola.ingresar(6);
         cola.quitar();
+        cola.ingresar(6);
+        cola.mostrar();
     }
 }
