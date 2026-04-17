@@ -1,19 +1,14 @@
 public class main {
 
     public static void main(String[] args) {
-        listaenlazada lista = new listaenlazada();
+        listacircular circulo = new listacircular();
 
-        lista.ingresar(5, 0);
+        circulo.ingresar(5, 0);
+        circulo.ingresar(9, 0);
 
-        lista.ingresar(6, 1);
+        circulo.mostrar();
 
-        lista.ingresar(9, 0);
-
-        lista.ingresar(14, 19);
-
-        lista.mostrar();
-        System.out.println("eliminar");
-        lista.eliminar(9);
-        lista.mostrar();
+        circulo.eliminar(1);
+        circulo.mostrar();
     }
 }
