@@ -19,5 +19,21 @@ public class main {
         System.out.println("eliminando el 10");
         b.inorden();
         System.out.println(b.buscar(9));
+
+        abo e1 =  new abo();
+
+        abo e2 = new abo();
+
+        e1.insertar(8);
+        e1.insertar(2);
+        e1.insertar(1);
+        e1.insertar(10);
+
+
+        e2.insertar(5);
+        e2.insertar(3);
+        e2.insertar(0);
+
+        e1.union(e2);
     }
 }

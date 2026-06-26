@@ -9,7 +9,16 @@ class abo{
         der =null;
     }
 
+    public int getdato(){
+        return this.dato;
+    }
+    public abo getizq(){
+        return this.izq;
+    }
 
+    public abo getder(){
+        return this.der;
+    }
     private boolean esvacio(){
         return dato == -1 ;
     }
@@ -117,4 +126,36 @@ class abo{
             }
         }
     }
+
+    public void union(abo a2){
+        pilaestatica e1 = new pilaestatica(50);
+        pilaestatica e2 = new pilaestatica(50);
+
+        abo actual1= this;
+        abo actual2 = a2;
+
+        while(actual1!=null || actual2!=null || !e1.espilavacia() ||!e2.espilavacia()){
+            while(actual1!=null){
+                e1.ingresar(actual1);
+                actual1= actual1.getizq();
+            }
+
+            while(actual2!=null){
+                e2.ingresar(actual2);
+                actual2=actual2.getizq();
+            }
+
+            if(e2.espilavacia() || (!e1.espilavacia() && (((abo)e1.cima()).getdato() <= ((abo)e2.cima()).getdato()))){
+                actual1 = (abo)e1.eliminar();
+                System.out.print(actual1.getdato()+" ");
+                actual1= actual1.getder();
+            }else{
+                actual2 = (abo)e2.eliminar();
+                System.out.print(actual2.getdato()+" ");
+                actual2=actual2.getder();
+            }
+        }
+
+    }
+
 }
