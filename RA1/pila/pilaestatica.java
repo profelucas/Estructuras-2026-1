@@ -26,6 +26,8 @@ class pilaestatica {
         if(!espilallena()){
             this.tope++;
             this.pila[tope] = x;
+        }else{
+            System.out.println("La pila esta llena");
         }
         
     }
@@ -40,17 +42,19 @@ class pilaestatica {
     }
 
     public void mostrar(){
-        pilaestatica pilaaux = new pilaestatica(this.tam);
-        while(!espilavacia()) {
-            System.out.println(cima());
-            pilaaux.ingresar(cima());
-            eliminar();
+        int i = tope;
+        if(!espilavacia()){
+            while(i>=0){
+                System.out.println(pila[i]);
+                i--;
+            }
+        }else{
+            System.out.println("La pila esta vacia");
         }
-        while(!pilaaux.espilavacia()){
-            this.ingresar(pilaaux.cima());
-            pilaaux.eliminar();
-        }
+        
     }
+
+    
 //dado un objeto devolver la posicion
     public void buscar(Object x){
     }
