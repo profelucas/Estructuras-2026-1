@@ -10,5 +10,16 @@ public class main {
 
         circulo.eliminar(1);
         circulo.mostrar();
+
+        listadoble doble = new listadoble();
+
+        doble.ingresar(5, 0);
+
+        doble.ingresar(6, 3);
+        doble.ingresar(10, 2);
+
+        doble.ingresar(1, 1);
+
+        doble.mostrar();
     }
 }
