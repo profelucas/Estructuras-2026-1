@@ -16,25 +16,55 @@ class avl {
             return dato==-1;
         }
 
-        private int altura (avl nodo){
-            if (nodo ==null){
+        private int distancia(avl nodoA, avl nodoB) {
+            if (nodoA == nodoB) {
                 return 0;
-            }else{
-                return nodo.altura;
             }
+            if (nodoA == null) {
+                return -1;
+            }
+
+            int izq = distancia(nodoA.izq, nodoB);
+
+            if (izq != -1) {
+                return 1 + izq;
+            }
+
+            int der = distancia(nodoA.der, nodoB);
+
+            if (der != -1) {
+                return 1 + der;
+            }
+            return -1;
         }
 
-        private int actualizaraltura(){
-            int i=altura(izq);
-            int d =altura(der);
-            if (i>d){
-                altura = 1+ i;
-            }else{
-                altura =1+d;
-            }
-            return altura;
 
-       }
+
+        private int altura(avl A, avl actual) {
+            if (actual == null) {
+                return 0;
+            }
+            if (actual.izq == null && actual.der == null) {
+                return distancia(A, actual);
+            }
+
+            int hi = altura(A, actual.izq);
+            int hd = altura(A, actual.der);
+
+            return Math.max(hi, hd);
+        }
+
+        private int actualizaraltura() {
+            altura = altura(this, this);
+            return altura;
+        }
+
+        private int altura(avl nodo) {
+            if (nodo == null) {
+            return 0;
+            }
+            return nodo.altura;
+        }
 
         private int balance(){
             return altura(izq)-altura(der); 
@@ -120,8 +150,6 @@ class avl {
             return this;
 
         }
-
-        //desafio aplicar la eliminacion
 
         
 }

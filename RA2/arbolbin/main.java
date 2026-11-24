@@ -35,5 +35,28 @@ public class main {
         e2.insertar(0);
 
         e1.union(e2);
+
+        abo e3 = new abo();
+        int k = 7;
+        e3.insertar(10);
+        e3.insertar(2);
+        e3.insertar(11);
+        e3.insertar(1);
+        e3.insertar(5);
+        e3.insertar(3);
+        e3.insertar(6);
+        e3.insertar(4);
+
+        abo e4 = new abo();
+        k=11;
+        e4.insertar(9);
+        e4.insertar(4);
+        e4.insertar(17);
+        e4.insertar(3);
+        e4.insertar(6);
+        e4.insertar(22);
+        e4.insertar(5);
+        e4.insertar(7);
+        e4.insertar(20);
     }
 }
